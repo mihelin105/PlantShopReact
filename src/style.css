@@ -1,0 +1,471 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fdfaf6;
+}
+
+hr {
+  opacity: 30%;
+}
+
+.container {
+  flex: 1;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.search input {
+  flex: 1;
+  padding-left: 10px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  /*background-color: #f9f9f9;*/
+  font-size: 16px;
+}
+
+.search input::placeholder {
+  color: #c9b194;
+  opacity: 1;
+  font-family: monospace;
+}
+
+.search button {
+  padding: 10px 20px;
+  margin: 0px;
+  border: none;
+  border-radius: 15px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  background-color: #faf1e6;
+  padding: 20px;
+  box-shadow: 0px 5px 7px #a7a399;
+}
+
+.navbar-brand {
+  color: rgb(36, 36, 36);
+  text-decoration: none;
+}
+
+.auth {
+  display: flex;
+  gap: 20px;
+  margin-left: auto;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ede8dc;
+  padding: 20px;
+  margin: 0px;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url(images/DALL·E\ 2025-03-23\ 13.21.23\ -\ A\ bright\ indoor\ setting\ with\ a\ white\ table\ filled\ with\ a\ variety\ of\ houseplants\ in\ modern\ pots.\ The\ plants\ include\ cacti\,\ succulents\,\ leafy\ greens\,\ an.webp);
+  display: flex;
+  /*flex-direction: column;*/
+  align-items: center;
+  justify-content: flex-start;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-left: 50px;
+}
+
+.shippori-mincho-regular {
+  font-family: "Shippori Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hero-text {
+  max-width: 400px;
+  backdrop-filter: blur(2px);
+  padding: 2rem 2.5rem;
+  margin: 20rem 10rem 0rem;
+  border-radius: 20px;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.big-text {
+  color: #fef5e9;
+  font-size: 2.5rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.hero-bttn {
+  background-color: #faf1e6;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.hero-bttn:hover {
+  background-color: #c9b194;
+}
+
+/* TOP 6 PLANTS */
+
+.column-plants {
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto; /*centrira*/
+}
+
+.product {
+  flex: 1 1 25%;
+  max-width: 25%;
+  text-align: center;
+}
+
+/*hover image effect*/
+.product {
+  position: relative;
+  width: 100%;
+  height: auto;
+  /*overflow: hidden;*/
+}
+
+.product img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1; /*cijelo vrijeme je iza glavne slike*/
+}
+
+/*kada imamo hover efekt, origigi postane nevidljiva, 
+a opacitiy od replacement je vidljiv*/
+.product:hover .hover-img {
+  opacity: 1;
+}
+
+.product:hover .default-img {
+  opacity: 0;
+}
+
+/*asseti*/
+.icon {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  font-size: 1.4rem;
+  color: black;
+  z-index: 5;
+}
+
+.cloud {
+  top: 10px;
+  left: 20px;
+}
+
+.moon {
+  top: 10px;
+  right: 20px;
+}
+
+.sun {
+  top: 10px;
+  left: 50%;
+}
+
+.product:hover .sun {
+  animation: floatSun 0.5s ease forwards;
+}
+
+.product:hover .moon {
+  animation: floatMoon 0.5s ease forwards;
+}
+
+.product:hover .cloud {
+  animation: floatCloud 0.5s ease forwards;
+}
+
+.product:hover .cloud {
+  animation-delay: 0s;
+}
+.product:hover .moon {
+  animation-delay: 0.1s;
+}
+.product:hover .sun {
+  animation-delay: 0.2s;
+}
+
+@keyframes floatSun {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, -50px); /*samo gore*/
+  }
+}
+
+@keyframes floatMoon {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(50px, -40px); /*desno gore*/
+  }
+}
+
+@keyframes floatCloud {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50px, -40px); /*lijevo gore*/
+  }
+}
+
+/*3 slike i jedna glavna sa tekstom*/
+
+.product img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3; /*kontrolira dimenzije bez koristenja piksela*/
+  object-fit: cover;
+  border-radius: 0.7rem;
+  display: block;
+}
+
+.plant-care-section {
+  padding: 4rem 2rem;
+  background-color: #fdfaf6;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.text-box {
+  flex: 1 1 40%;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.main-img-box {
+  flex: 1 1 55%;
+}
+
+.main-img-box img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.bottom-row img {
+  width: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+/*Care Plant section za hover effect*/
+
+.img-container:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+.img-container {
+  position: relative; /*da se text moze postaviti preko slike*/
+  display: inline-block;
+  overflow: hidden;
+}
+
+.img-container img {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/*.hover-overlay span,
+.hover-overlay i {
+  position: absolute;
+  top: 50%; /* be in middle 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  z-index: 2;
+  padding: 0.4rem 1rem; /*top bottom , left right
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}*/
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.hover-overlay {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  z-index: 2;
+  padding: 0.4rem 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.img-container:hover img {
+  opacity: 0.4;
+}
+
+.img-container:hover .hover-overlay {
+  opacity: 100%;
+}
+
+.store-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.store-image img {
+  display: block;
+  max-width: 400px;
+  height: auto;
+  padding: 20px;
+}
+
+.store-text {
+  display: flex;
+  text-align: left;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+#title {
+  padding: 10px;
+}
+
+.footer {
+  height: 300px;
+  background-color: #f4e7d7;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  text-align: start;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 50px;
+}
+
+.footer-text {
+  position: relative;
+  left: 20px;
+  font-size: larger;
+  cursor: default;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  font-size: larger;
+  left: -40px;
+}
+
+.footer-icons :hover {
+  cursor: pointer;
+}

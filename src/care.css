@@ -1,0 +1,90 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+#sun-content {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.text-container1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 10px #aaaaaa;
+}
+
+.img-container1 img {
+  width: 350px;
+  padding-right: 30px;
+}
+
+#water-content {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.img-container2 img {
+  width: 400px;
+  padding-right: 30px;
+}
+
+.text-container2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 10px #aaaaaa;
+}
+
+#nutrition-content {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: space-around;
+  padding-bottom: 50px;
+}
+
+.img-container3 img {
+  width: 400px;
+  padding-right: 30px;
+}
+
+.text-container3 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 10px #aaaaaa;
+}
+.hero2 {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: space-around;
+  background-color: #d7d3bf;
+}
+
+.round-img img {
+  width: 300px;
+  border-radius: 100%;
+}
+
+.hero2-txt {
+  position: relative;
+  right: 80px;
+  top: 130px;
+  font-size: 20px;
+}

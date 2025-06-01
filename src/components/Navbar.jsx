@@ -1,17 +1,45 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "/src/style.css";
+import { AuthContext } from "../context/AuthContext";
+
 export default function Navbar() {
+  // Dohvati login status iz AuthContext
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  // State za unos iz search inputa
+  const [query, setQuery] = useState("");
+
+  // Funkcija koja se poziva kada korisnik klikne na search gumb
+  const handleSearch = () => {
+    const lowerQuery = query.toLowerCase();
+
+    if (lowerQuery.includes("indoor")) {
+      navigate("/houseplants#indoor");
+    } else if (lowerQuery.includes("outdoor")) {
+      navigate("/houseplants#outdoor");
+    } else {
+      alert('Please include the words "indoor" or "outdoor" in your search.');
+    }
+  };
+
   return (
     <>
-      <div className="search">
-        <input
-          type="text"
-          placeholder="Welcome! What plant are you looking for?"
-        />
-        <button className="search button">
-          <i className="fa-solid fa-magnifying-glass"></i>
-        </button>
+      <div className="top-container">
+        <img src="/images/the sill logo.png" alt="" />
+
+        <div className="search">
+          <input
+            type="text"
+            placeholder="Indoor or outdoor plants?"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <button className="search button" onClick={handleSearch}>
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
       </div>
 
       <hr />
@@ -19,7 +47,7 @@ export default function Navbar() {
       <div className="navbar">
         <div>
           <Link className="navbar-brand" to="/">
-            Logo
+            Home
           </Link>
         </div>
         <div>
@@ -40,14 +68,19 @@ export default function Navbar() {
 
         <div className="auth">
           <div>
-            <Link className="navbar-brand" to="/register">
-              Register
-            </Link>
-          </div>
-          <div>
-            <Link className="navbar-brand" to="/login">
-              Login
-            </Link>
+            {isLoggedIn ? (
+              <span
+                onClick={() => {
+                  setIsLoggedIn(false);
+                  navigate("/login");
+                }}
+                style={{ cursor: "pointer" }}
+              >
+                Logout
+              </span>
+            ) : (
+              <Link to="/login">Login / Register</Link>
+            )}
           </div>
         </div>
       </div>

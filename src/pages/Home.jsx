@@ -20,7 +20,9 @@ export default function Home() {
             with green life
           </p>
           <div>
-            <button className="hero-bttn">Shop More</button>
+            <a href="/houseplants">
+              <button class="hero-bttn">Shop More</button>
+            </a>
           </div>
         </div>
       </div>
@@ -93,7 +95,7 @@ export default function Home() {
         </div>
 
         <div className="bottom-row">
-          <Link to="/care#water-content" className="img-container">
+          <a href="/care#water-content" className="img-container">
             <img
               src="/images/𝗩𝗮𝘁𝘁𝗻𝗮 𝗱𝗶𝗻𝗮 𝗸𝗿𝘂𝗸𝘃ä𝘅𝘁𝗲𝗿 𝗽å 𝗿ä𝘁𝘁 𝘀ä𝘁𝘁 1.png"
               alt="Watering"
@@ -102,8 +104,9 @@ export default function Home() {
               <span> Watering </span>
               <i className="fa-solid fa-cloud-showers-heavy"></i>
             </div>
-          </Link>
-          <Link to="/care#sun-content" className="img-container">
+          </a>
+
+          <a href="/care#sun-content" className="img-container">
             <img
               src="/images/Growing Gardens in the Dark_ A Guide to Thriving Without Sunlight 1.png"
               alt="Sunlight"
@@ -112,14 +115,15 @@ export default function Home() {
               <span>Sunlight</span>
               <i className="fa-solid fa-sun-plant-wilt"></i>
             </div>
-          </Link>
-          <Link to="/care#nutrition-content" className="img-container">
+          </a>
+
+          <a href="/care#nutrition-content" className="img-container">
             <img src="/images/download (1) 1.png" alt="Nutrition" />
             <div className="hover-overlay">
               <span>Nutrients</span>
               <i className="fa-solid fa-leaf"></i>
             </div>
-          </Link>
+          </a>
         </div>
       </section>
 

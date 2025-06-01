@@ -41,3 +41,21 @@
 .type-text {
   margin: 20px 20px;
 }
+
+@media (max-width: 768px) {
+  .plant-gallery-indoor,
+  .plant-gallery-outdoor {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .plant-card {
+    padding: 15px;
+  }
+
+  .type-text {
+    margin: 10px;
+    text-align: center;
+  }
+}

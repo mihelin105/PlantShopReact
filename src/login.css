@@ -1,0 +1,70 @@
+.login-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.right-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 100px 100px;
+  box-sizing: border-box;
+}
+
+.right-form {
+  flex: 1;
+  font-family: Arial, sans-serif;
+  max-width: 300px;
+  margin: auto;
+  padding: 20px;
+}
+
+.right-form-txt h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.right-form-txt p {
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.right-form input,
+.right-form textarea {
+  background-color: transparent;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  color: #333;
+  outline: none;
+}
+
+.right-form input[type="submit"] {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  background-color: #000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.success-msg {
+  color: gray;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.error-msg {
+  color: red;
+  margin-top: 10px;
+  text-align: left;
+}

@@ -13,9 +13,9 @@ export default function Care() {
           <h2>Everything you need to know about your new house friends!</h2>
         </div>
       </div>
+
       <hr />
       <div className="container">
-        {/* ☀️ LIGHT */}
         <div id="sun-content" className="section sun-section">
           <div className="text-container1">
             <h2>Light</h2>
@@ -65,7 +65,6 @@ export default function Care() {
           </div>
         </div>
 
-        {/* 💧 WATERING */}
         <div id="water-content" className="section water-section">
           <div className="img-container2">
             <img src="/images/care - watering.png" alt="Watering care" />
@@ -115,7 +114,6 @@ export default function Care() {
           </div>
         </div>
 
-        {/* 🌿 NUTRITION */}
         <div id="nutrition-content" className="section nutrition-section">
           <div className="text-container3">
             <h2>Nutritions</h2>

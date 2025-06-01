@@ -5,6 +5,9 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Houseplants from "./pages/Houseplants";
 import Care from "./pages/Care";
+import Contact from "./pages/Contact";
+import Login from "./pages/Login";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -15,7 +18,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/houseplants" element={<Houseplants />} />
           <Route path="/care" element={<Care />} />
-          {/* Add more pages like Contact, Login, Register later */}
+          {/* user mora biti ulogiran da bi vidio ovu stranicu */}
+          <Route
+            path="/contact"
+            element={
+              <PrivateRoute>
+                <Contact />
+              </PrivateRoute>
+            }
+          />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
       <Footer />

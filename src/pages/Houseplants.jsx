@@ -27,7 +27,7 @@ function Houseplants() {
   return (
     <div className="main-container">
       <div className="type-text nunito">
-        <h3>INDOOR PLANTS</h3>
+        <h3 id="indoor">INDOOR PLANTS</h3>
       </div>
       <div className="plant-gallery-indoor">
         {indoorPlants.map((fileName, index) => (
@@ -44,7 +44,7 @@ function Houseplants() {
       </div>
 
       <div className="type-text nunito">
-        <h3>OUTDOOR PLANTS</h3>
+        <h3 id="outdoor">OUTDOOR PLANTS</h3>
       </div>
       <div className="plant-gallery-outdoor">
         {outdoorPlants.map((fileName, index) => (
